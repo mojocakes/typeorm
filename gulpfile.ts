@@ -1,6 +1,6 @@
-///<reference path="node_modules/@types/node/index.d.ts"/>
-///<reference path="node_modules/@types/chai/index.d.ts"/>
-///<reference path="node_modules/@types/mocha/index.d.ts"/>
+///<reference path="../../node_modules/@types/node/index.d.ts"/>
+///<reference path="../../node_modules/@types/chai/index.d.ts"/>
+///<reference path="../../node_modules/@types/mocha/index.d.ts"/>
 
 import {Gulpclass, Task, SequenceTask, MergedTask} from "gulpclass";
 
@@ -117,7 +117,7 @@ export class Gulpfile {
                 "cd ./build/package && npm publish"
             ]));
     }
-    
+
     /**
      * Packs a .tgz from ./build/package directory.
      */

@@ -129,14 +129,14 @@ export class DataSource {
     // Constructor
     // -------------------------------------------------------------------------
 
-    constructor(options: DataSourceOptions) {
+    constructor(options: DataSourceOptions, driverFactory?: DriverFactory) {
         this.name = options.name || "default"
         this.options = options
         this.logger = new LoggerFactory().create(
             this.options.logger,
             this.options.logging,
         )
-        this.driver = new DriverFactory().create(this)
+        this.driver = (driverFactory ?? new DriverFactory()).create(this)
         this.manager = this.createEntityManager()
         this.namingStrategy =
             options.namingStrategy || new DefaultNamingStrategy()
